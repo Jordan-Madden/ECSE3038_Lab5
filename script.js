@@ -1,3 +1,0 @@
-/*
- Author: Jordan Madden
-*/

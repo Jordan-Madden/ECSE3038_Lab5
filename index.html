@@ -4,9 +4,166 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jordan Madden - Lab 5</title>
+    <title>Lecture 6</title>
+    <style>
+        form{
+            margin-left: 400px;
+        }
+        .new-tank-form{
+            margin: 20px;
+        }
+        #new-tank-location{
+            margin-left: 10px;
+        }
+        .new-location{
+            margin-bottom: 10px;
+        }
+        #new-tank-latitude{
+            margin-left: 50px;
+        }
+        .new-latitude{
+            margin-bottom: 10px;
+        }
+        #new-tank-longitude{
+            margin-left: 37px;
+        }
+        .new-longitude{
+            margin-bottom: 10px;
+        }
+        #new-tank-pf{
+            margin-left: 3px;
+        }
+        .new-pf{
+            margin-bottom: 10px;
+        }
+        #new-tank-submit{
+            margin-left: 120px;
+        }
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .tank-card{
+            border: 1px solid black;
+            margin-left: 15px;
+            margin-right: 15px;
+            border-radius: 20px;
+            width: 200px;
+            height: 160px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .tank-location{
+            background-color: red;
+            border-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 100%;
+            height: 25%;
+        }
+        .tank-latitude{
+            background-color: blue;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 100%;
+            height: 25%;
+        }
+        .tank-longitude{
+            background-color: yellow;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 100%;
+            height: 25%;
+        }
+        .tank-pf{
+            background-color: orange;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 100%;
+            height: 25%;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="new-tank-form">
+        <form>
+            <div class="new-location">
+                <label for="new-tank-location">Tank Location</label>
+                <input type="text" name="" id="new-tank-location">
+            </div>
+            
+            <div class="new-latitude">
+                <label for="new-tank-latitude">Latitude</label>
+                <input type="text" name="" id="new-tank-latitude">
+            </div>
+            
+            <div class="new-longitude">
+                <label for="new-tank-longitude">Longitude</label>
+                <input type="text" name="" id="new-tank-longitude"> 
+            </div>
+
+            <div class="new-pf">
+                <label for="new-tank-pf">Percentage Full</label>
+                <input type="text" name="" id="new-tank-pf"> 
+            </div>
+
+            <input type="submit" value="Submit", id="new-tank-submit">                
+        </form>
+    </div>
+    <div class="container">
+        <div class="tank-card">
+            <div class="tank-location">Location</div>
+            <div class="tank-latitude">Latitude</div>
+            <div class="tank-longitude">Longitude</div>
+            <div class="tank-pf">Percentage Full</div>
+        </div>
+    </div> 
+    <script>
+        // POST
+        document.getElementById("new-tank-submit").addEventListener("click", function(event){
+            event.preventDefault();
+            let tankLocation = document.getElementById("new-tank-location").value;
+            let tankLat = document.getElementById("new-tank-latitude").value;
+            let tankLong = document.getElementById("new-tank-longitude").value;
+            let tankPF = document.getElementById("new-tank-pf").value;
+
+            let jsonBody = {
+                "location": tankLocation,
+                "lat": tankLat,
+                "long": tankLong,
+                "percentage-full": tankPF,
+            };
+
+            fetch("https://localhost:5000/tank", {
+                method: "POST",
+                body: JSON.stringify(jsonBody),
+                headers:{
+                    "Content-type": "application/json",
+                },
+            })
+            .then((res) => jes.json)
+            .then((json) => console.log(json));
+
+        });
+        /*
+        // GET
+        fetch("http://localhost:5000/dish")
+        .then(res => res.json)
+        .then((json) => {
+            let dish = json[0];
+
+            document.getElementById("dish-name").innerHTML = dish.name;
+            document.getElementById("dish-vegan").innerHTML = dish.vegan ? "Vegan":"Not Vegan"
+            document.getElementById("dish-cost").innerHTML = dish.cost
+            document.getElementById("dish-img").src = dish.img
+            document.getElementById("dish-id").innerHTML = dish.id;
+        });*/
+    </script>   
 </body>
 </html>
