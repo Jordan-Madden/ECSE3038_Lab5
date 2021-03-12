@@ -1,0 +1,81 @@
+form{
+    margin-left: 400px;
+}
+.new-tank-form{
+    margin: 20px;
+}
+#new-tank-location{
+    margin-left: 10px;
+}
+.new-location{
+    margin-bottom: 10px;
+}
+#new-tank-latitude{
+    margin-left: 50px;
+}
+.new-latitude{
+    margin-bottom: 10px;
+}
+#new-tank-longitude{
+    margin-left: 37px;
+}
+.new-longitude{
+    margin-bottom: 10px;
+}
+#new-tank-pf{
+    margin-left: 3px;
+}
+.new-pf{
+    margin-bottom: 10px;
+}
+#new-tank-submit{
+    margin-left: 120px;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.tank-card{
+    border: 1px solid black;
+    margin: 15px;
+    border-radius: 20px;
+    width: 200px;
+    height: 160px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.tank-location{
+    background-color: red;
+    border-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 25%;
+}
+.tank-latitude{
+    background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 25%;
+}
+.tank-longitude{
+    background-color: yellow;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 25%;
+}
+.tank-pf{
+    background-color: orange;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 25%;
+}
