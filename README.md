@@ -1,6 +1,6 @@
 # ECSE3038 Lab 5
 
-This lab is meant to acclimate students to the tcehnlogies used in designing a  HTML frontend for a RESTful API Server.
+This lab is meant to acclimate students to the technlogies used in designing a  HTML frontend for a RESTful API Server.
 
 ## Requirements
 The previous 2 labs allowed the student to design a functional RESTful API server, so the tasks left are to design a use friendly GUI 
